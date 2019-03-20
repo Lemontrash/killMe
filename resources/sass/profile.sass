@@ -124,25 +124,35 @@ body
 	.links-container
 		padding: 0
 		margin: 0
-	.link-item>a
-		display: flex
-		align-items: center
-		color: rgba(255, 255, 255, 0.5)
-		padding: 30px 0 30px 80px
-		cursor: pointer
-		text-decoration: none
-		transition: all .2s ease-in-out
-		svg
-			transition: all .2s ease-in-out
-			fill: #009aff
-		&:hover
-			color: #fff
-			background-color: #343c53
-			box-shadow: -13px 7.5px 20px 0 rgba(24, 28, 38, 0.4)
-			svg
-				fill: #FFF
-			.fas
+	.link-item
+		&.active
+			&>a
 				color: #fff
+				background-color: #343c53
+				//box-shadow: -13px 7.5px 20px 0 rgba(24, 28, 38, 0.4)
+				svg
+					fill: #FFF
+				.fas
+					color: #fff
+		&>a
+			display: flex
+			align-items: center
+			color: rgba(255, 255, 255, 0.5)
+			padding: 30px 0 30px 80px
+			cursor: pointer
+			text-decoration: none
+			transition: all .2s ease-in-out
+			svg
+				transition: all .2s ease-in-out
+				fill: #009aff
+			&:hover
+				color: #fff
+				background-color: #343c53
+				//box-shadow: -13px 7.5px 20px 0 rgba(24, 28, 38, 0.4)
+				svg
+					fill: #FFF
+				.fas
+					color: #fff
 	.fas
 		color: #009aff
 		font-size: 22px

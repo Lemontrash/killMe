@@ -4,7 +4,7 @@
     <i>USERS</i>
   </div>
   <ul class="links-container">
-    <li class="link-item">
+    <li class="link-item @if(Route::currentRouteName() === 'deposit') active @endif">
       <a href="{{route('deposit')}}">
         <div class="fas">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.859 477.859" xml:space="preserve">
@@ -15,7 +15,7 @@
       </a>
     </li>
     @if(\Illuminate\Support\Facades\Auth::user()->role == 'business')
-      <li class="link-item">
+      <li class="link-item @if(Route::currentRouteName() === 'members') active @endif">
         <a href="{{route('members')}}">
           <i class="fas fa-user"></i>
           Members
@@ -23,7 +23,7 @@
       </li>
       @endif
 
-    <li class="link-item">
+    <li class="link-item @if(Route::currentRouteName() === 'filesHistory') active @endif">
       <a href="{{route('filesHistory')}}">
         <div class="fas">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 26 26" version="1.1">
@@ -33,19 +33,19 @@
         Files History
       </a>
     </li>
-    <li class="link-item">
+    <li class="link-item @if(Route::currentRouteName() === 'profileSettings') active @endif">
       <a href="{{route('profileSettings')}}">
         <i class="fas fa-cog"></i>
         Settings
       </a>
     </li>
-    <li class="link-item">
+    <li class="link-item @if(Route::currentRouteName() === 'contactUs') active @endif">
       <a href="{{route('contactUs')}}">
         <i class="fas fa-envelope"></i>
         Contact
       </a>
     </li>
-    <li class="link-item">
+    <li class="link-item @if(Route::currentRouteName() === 'faq') active @endif">
       <a href="{{route('faq')}}">
         <i class="fas fa-question"></i>
         FAQ

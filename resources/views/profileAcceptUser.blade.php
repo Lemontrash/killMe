@@ -54,28 +54,28 @@
                           <b class="text-white">ID picture</b>
                           <small>File Status</small>
                           <button class="theme-btn btn-green">Approved</button>
-                          <a href="#" class="view-files">View File</a>
+                          <a href="#" class="view-files" target="_blank">View File</a>
 
                         </div>
                         <div class="col">
                           <b class="text-white">Selfie Picture</b>
                           <small>File Status</small>
                           <button class="theme-btn btn-gray">Not Approved</button>
-                          <a href="#" class="view-files">View File</a>
+                          <a href="#" class="view-files" target="_blank">View File</a>
 
                         </div>
                         <div class="col">
                           <b class="text-white">Bank Transfer</b>
                           <small>File Status</small>
                           <button class="theme-btn btn-gray">Not Approved</button>
-                          <a href="#" class="view-files">View File</a>
+                          <a href="#" class="view-files" target="_blank">View File</a>
 
                         </div>
                         <div class="col">
                           <b class="text-white">DOD</b>
                           <small>File Status</small>
                           <button class="theme-btn btn-gray">Not Approved</button>
-                          <a href="#" class="view-files">View File</a>
+                          <a href="#" class="view-files" target="_blank">View File</a>
 
                         </div>
                       </div>

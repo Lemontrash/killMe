@@ -40,7 +40,7 @@
                       <th>{{\App\User::where('id', $file->user_id)->first()->mobile}}</th>
                       @if($file->approved == 'yes')
                           <th class="text-center">
-                              <a href="/getPdfFromProfile/{{$file->id}}" class="theme-btn btn-blue">Download</a>
+                              <a href="/getPdfFromProfile/{{$file->id}}" class="theme-btn btn-blue" target="_blank">Download</a>
                           </th>
                           @elseif($file->approved == '-')
                           <th class="text-center">

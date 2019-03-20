@@ -49,7 +49,7 @@
       </div>
       <div class="formInner">
         <label for="">Phone Number</label>
-        <input type="tel" name="phoneNumber" placeholder="Phone Number" id="phoneNumber" required>
+        <input type="tel" name="phoneNumber" placeholder="Phone Number" id="phoneNumber" required maxlength="15">
         <!-- <i class="fas fa-check-circle"></i> -->
       </div>
     </div>

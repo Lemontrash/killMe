@@ -56,6 +56,19 @@ body {
   margin: 0;
 }
 
+.profile-nav .link-item.active > a {
+  color: #fff;
+  background-color: #343c53;
+}
+
+.profile-nav .link-item.active > a svg {
+  fill: #FFF;
+}
+
+.profile-nav .link-item.active > a .fas {
+  color: #fff;
+}
+
 .profile-nav .link-item > a {
   display: flex;
   align-items: center;
@@ -74,7 +87,6 @@ body {
 .profile-nav .link-item > a:hover {
   color: #fff;
   background-color: #343c53;
-  box-shadow: -13px 7.5px 20px 0 rgba(24, 28, 38, 0.4);
 }
 
 .profile-nav .link-item > a:hover svg {

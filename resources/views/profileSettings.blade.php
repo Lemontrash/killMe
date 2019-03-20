@@ -56,20 +56,33 @@
                                 <select name="month" id="profile_month" class="nice-select theme-nice-select" required>
                                     <option value="Month" selected default disabled>Month</option>
                                     <option value="january">January</option>
+                                    <option value="february">February</option>
+                                    <option value="march">March</option>
+                                    <option value="april">April</option>
+                                    <option value="may">May</option>
+                                    <option value="june">June</option>
+                                    <option value="july">July</option>
+                                    <option value="august">August</option>
+                                    <option value="september">September</option>
+                                    <option value="october">October</option>
+                                    <option value="november">November</option>
                                     <option value="december">December</option>
                                 </select>
                             </div>
                             <div class="inp-wrap">
                                 <select name="date" id="profile_date" class="nice-select theme-nice-select" required>
                                     <option value="" selected default disabled>Date</option>
-                                    <option value="1">1</option>
-                                    <option value="31">31</option>
+                                    @for ($i = 1; $i <= 31; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
                                 </select>
                             </div>
                             <div class="inp-wrap">
                                 <select name="year" id="profile_year" class="nice-select theme-nice-select" required>
                                     <option value="Year" selected default disabled>Year</option>
-                                    <option value="1024">1024</option>
+                                    @for ($i = 1900; $i < intval(date('Y')); $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
                                     <option value="2048">2048</option>
                                 </select>
                             </div>
