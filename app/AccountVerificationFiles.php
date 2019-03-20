@@ -9,6 +9,6 @@ class AccountVerificationFiles extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'user_id', 'file_id', 'selfie', 'bank', 'dod'
+        'user_id', 'file_id', 'selfie', 'bank', 'dod', 'id_approved', 'selfie_approved', 'bank_approved', 'dod_approved'
     ];
 }

@@ -42,7 +42,11 @@
                         <td>{{$user->email}}</td>
                         {{--<td>{{$user->email}}</td>--}}
                         <td>
-                            <button class="theme-btn btn-gray">No</button><button class="theme-btn btn-red">Yes</button>
+                            <form action="#" method="post">
+                                <input type="hidden" name="user" value="">
+                                <button class="theme-btn btn-gray" name="accept" value="no">No</button>
+                                <button class="theme-btn btn-red"  name="accept" value="yes">Yes</button>
+                            </form>
                             <!-- <i class="fas fa-check-circle"></i> -->
                         </td>
                         <td>
