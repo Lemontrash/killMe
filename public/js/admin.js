@@ -1945,6 +1945,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2005,18 +2013,6 @@ __webpack_require__.r(__webpack_exports__);
           _this4.user.approved.dod.status = false;
         });
       }
-    },
-    downloadPicture: function downloadPicture(id_file) {
-      axios.post('/admin/downloadId/' + id_file).then(function (res) {});
-    },
-    downloadSelfie: function downloadSelfie(id_file) {
-      axios.post('/admin/downloadSelfie/' + id_file).then(function (res) {});
-    },
-    downloadBank: function downloadBank(id_file) {
-      axios.post('/admin/downloadBank/' + id_file).then(function (res) {});
-    },
-    downloadDod: function downloadDod(id_file) {
-      axios.post('/admin/downloadDod/' + id_file).then(function (res) {});
     }
   },
   components: {
@@ -2063,6 +2059,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2075,7 +2075,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('/admin/usersWithPdf').then(function (res) {
         // user , pdf
-        _this.data = res.data.pdf.map(function (n) {
+        _this.data = res.data.files.map(function (n) {
           n.user = res.data.users.find(function (z) {
             return z.id == n.user_id;
           });
@@ -2083,6 +2083,9 @@ __webpack_require__.r(__webpack_exports__);
         });
       });
     }
+  },
+  created: function created() {
+    this.sync();
   }
 });
 
@@ -3724,19 +3727,13 @@ var render = function() {
             }),
             _vm._v(" "),
             _c(
-              "button",
+              "a",
               {
-                on: {
-                  click: function($event) {
-                    return _vm.downloadPicture(_vm.user.approved.picture.id)
-                  }
+                attrs: {
+                  href: "/admin/downloadId/" + _vm.user.approved.picture.id
                 }
               },
-              [
-                _c("i", { staticClass: "fa fa-copy" }),
-                _vm._v("\n          View Files\n          "),
-                _c("i", { staticClass: "fa fa-angle-right" })
-              ]
+              [_vm._m(0)]
             )
           ],
           1
@@ -3766,19 +3763,13 @@ var render = function() {
             }),
             _vm._v(" "),
             _c(
-              "button",
+              "a",
               {
-                on: {
-                  click: function($event) {
-                    return _vm.downloadSelfie(_vm.user.approved.selfie.id)
-                  }
+                attrs: {
+                  href: "/admin/downloadSelfie/" + _vm.user.approved.selfie.id
                 }
               },
-              [
-                _c("i", { staticClass: "fa fa-copy" }),
-                _vm._v("\n          View Files\n          "),
-                _c("i", { staticClass: "fa fa-angle-right" })
-              ]
+              [_vm._m(1)]
             )
           ],
           1
@@ -3808,19 +3799,13 @@ var render = function() {
             }),
             _vm._v(" "),
             _c(
-              "button",
+              "a",
               {
-                on: {
-                  click: function($event) {
-                    return _vm.downloadBank(_vm.user.approved.bank.id)
-                  }
+                attrs: {
+                  href: "/admin/downloadBank/" + _vm.user.approved.bank.id
                 }
               },
-              [
-                _c("i", { staticClass: "fa fa-copy" }),
-                _vm._v("\n          View Files\n          "),
-                _c("i", { staticClass: "fa fa-angle-right" })
-              ]
+              [_vm._m(2)]
             )
           ],
           1
@@ -3850,19 +3835,13 @@ var render = function() {
             }),
             _vm._v(" "),
             _c(
-              "button",
+              "a",
               {
-                on: {
-                  click: function($event) {
-                    return _vm.downloadDod(_vm.user.approved.dod.id)
-                  }
+                attrs: {
+                  href: "/admin/downloadDod/" + _vm.user.approved.dod.id
                 }
               },
-              [
-                _c("i", { staticClass: "fa fa-copy" }),
-                _vm._v("\n          View Files\n          "),
-                _c("i", { staticClass: "fa fa-angle-right" })
-              ]
+              [_vm._m(3)]
             )
           ],
           1
@@ -3873,7 +3852,48 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", [
+      _c("i", { staticClass: "fa fa-copy" }),
+      _vm._v("\n            View Files\n            "),
+      _c("i", { staticClass: "fa fa-angle-right" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", [
+      _c("i", { staticClass: "fa fa-copy" }),
+      _vm._v("\n            View Files\n            "),
+      _c("i", { staticClass: "fa fa-angle-right" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", [
+      _c("i", { staticClass: "fa fa-copy" }),
+      _vm._v("\n            View Files\n            "),
+      _c("i", { staticClass: "fa fa-angle-right" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", [
+      _c("i", { staticClass: "fa fa-copy" }),
+      _vm._v("\n            View Files\n            "),
+      _c("i", { staticClass: "fa fa-angle-right" })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -3915,7 +3935,13 @@ var render = function() {
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(item.user.mobile))]),
             _vm._v(" "),
-            _c("td"),
+            _c("td", [
+              _c("a", { attrs: { href: "/admin/downloadPdf/" + item.id } }, [
+                _c("button", { staticClass: "theme-btn btn-blue" }, [
+                  _vm._v("Download")
+                ])
+              ])
+            ]),
             _vm._v(" "),
             _c("td", { staticClass: "text-center" }, [_vm._v("Individual")])
           ])
@@ -3940,9 +3966,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { staticClass: "text-center" }, [_vm._v("Download PDF")]),
         _vm._v(" "),
-        _c("th", { staticClass: "text-center" }, [_vm._v("Aproved")]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center" }, [_vm._v("Amount")])
+        _c("th", { staticClass: "text-center" }, [_vm._v("Aproved")])
       ])
     ])
   }

@@ -10,11 +10,13 @@
             Files Status
           </div>
           <app-switch @input="updatePictureStatus" v-model="user.approved.picture.status"/>
-          <button @click="downloadPicture(user.approved.picture.id)">
-            <i class="fa fa-copy"></i>
-            View Files
-            <i class="fa fa-angle-right"></i>
-          </button>
+          <a :href="'/admin/downloadId/' + user.approved.picture.id">
+            <button>
+              <i class="fa fa-copy"></i>
+              View Files
+              <i class="fa fa-angle-right"></i>
+            </button>
+          </a>
         </div>
         <div class="item">
           <div class="head">
@@ -24,11 +26,13 @@
             Files Status
           </div>
           <app-switch @input="updateSelfieStatus" v-model="user.approved.selfie.status"/>
-          <button @click="downloadSelfie(user.approved.selfie.id)">
-            <i class="fa fa-copy"></i>
-            View Files
-            <i class="fa fa-angle-right"></i>
-          </button>
+          <a :href="'/admin/downloadSelfie/' + user.approved.selfie.id">
+            <button>
+              <i class="fa fa-copy"></i>
+              View Files
+              <i class="fa fa-angle-right"></i>
+            </button>
+          </a>
         </div>
         <div class="item">
           <div class="head">
@@ -38,11 +42,13 @@
             Files Status
           </div>
           <app-switch @input="updateBankStatus" v-model="user.approved.bank.status"/>
-          <button @click="downloadBank(user.approved.bank.id)">
-            <i class="fa fa-copy"></i>
-            View Files
-            <i class="fa fa-angle-right"></i>
-          </button>
+          <a :href="'/admin/downloadBank/' + user.approved.bank.id">
+            <button>
+              <i class="fa fa-copy"></i>
+              View Files
+              <i class="fa fa-angle-right"></i>
+            </button>
+          </a>
         </div>
         <div class="item">
           <div class="head">
@@ -52,11 +58,13 @@
             Files Status
           </div>
           <app-switch @input="updateDODStatus" v-model="user.approved.dod.status"/>
-          <button @click="downloadDod(user.approved.dod.id)">
-            <i class="fa fa-copy"></i>
-            View Files
-            <i class="fa fa-angle-right"></i>
-          </button>
+          <a :href="'/admin/downloadDod/' + user.approved.dod.id">
+            <button>
+              <i class="fa fa-copy"></i>
+              View Files
+              <i class="fa fa-angle-right"></i>
+            </button>
+          </a>
         </div>
         <div class="title">Files</div>
       </div>
@@ -138,26 +146,6 @@ export default {
         });
       }
     },
-    downloadPicture(id_file) {
-      axios.post('/admin/downloadId/' + id_file).then(res => {
-
-      });
-    },
-    downloadSelfie(id_file) {
-      axios.post('/admin/downloadSelfie/' + id_file).then(res => {
-
-      });
-    },
-    downloadBank(id_file) {
-      axios.post('/admin/downloadBank/' + id_file).then(res => {
-
-      });
-    },
-    downloadDod(id_file) {
-      axios.post('/admin/downloadDod/' + id_file).then(res => {
-
-      });
-    }
   },
   components: {
     AppSwitch,

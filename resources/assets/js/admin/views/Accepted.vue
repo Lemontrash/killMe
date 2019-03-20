@@ -10,7 +10,7 @@
           <th>Phone</th>
           <th class="text-center">Download PDF</th>
           <th class="text-center">Aproved</th>
-          <th class="text-center">Amount</th>
+          <!-- <th class="text-center">Amount</th> -->
         </tr>
       </thead>
       <tbody>
@@ -18,7 +18,11 @@
           <td>{{ item.user.firstName }} {{ item.user.lastName }}</td>
           <td>{{ item.user.created_at }}</td>
           <td>{{ item.user.mobile }}</td>
-          <td></td>
+          <td>
+            <a :href="'/admin/downloadPdf/' + item.id">
+              <button class="theme-btn btn-blue">Download</button>
+            </a>
+          </td>
           <td class="text-center">Individual</td>
         </tr>
       </tbody>
@@ -37,12 +41,15 @@ export default {
     sync() {
       axios.get('/admin/usersWithPdf').then(res => {
         // user , pdf
-        this.data = res.data.pdf.map(n => {
+        this.data = res.data.files.map(n => {
           n.user = res.data.users.find(z => z.id == n.user_id);
           return n;
         });
       });
     }
+  },
+  created() {
+    this.sync();
   }
 }
 </script>
