@@ -15,11 +15,6 @@
       <div class="profile-content">
         <div class="page-title">New users</div>
         <hr>
-        <div class="tab-switchers">
-          <div class="item active">All</div>
-          <div class="item">Processed</div>
-          <div class="item">Pending</div>
-        </div>
         <div class="tabs-container">
           <div class="tab-item active">
             <table class="table company-users-table">
@@ -57,30 +52,30 @@
                       <div class="theme-row">
                         <div class="col">
                           <b class="text-white">ID picture</b>
-                          <small>Files Status</small>
+                          <small>File Status</small>
                           <button class="theme-btn btn-green">Approved</button>
-                          <a href="#" class="view-files">View Files</a>
+                          <a href="#" class="view-files">View File</a>
 
                         </div>
                         <div class="col">
                           <b class="text-white">Selfie Picture</b>
-                          <small>Files Status</small>
+                          <small>File Status</small>
                           <button class="theme-btn btn-gray">Not Approved</button>
-                          <a href="#" class="view-files">View Files</a>
+                          <a href="#" class="view-files">View File</a>
 
                         </div>
                         <div class="col">
                           <b class="text-white">Bank Transfer</b>
-                          <small>Files Status</small>
+                          <small>File Status</small>
                           <button class="theme-btn btn-gray">Not Approved</button>
-                          <a href="#" class="view-files">View Files</a>
+                          <a href="#" class="view-files">View File</a>
 
                         </div>
                         <div class="col">
                           <b class="text-white">DOD</b>
-                          <small>Files Status</small>
+                          <small>File Status</small>
                           <button class="theme-btn btn-gray">Not Approved</button>
-                          <a href="#" class="view-files">View Files</a>
+                          <a href="#" class="view-files">View File</a>
 
                         </div>
                       </div>

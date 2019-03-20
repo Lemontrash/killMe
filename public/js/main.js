@@ -49,14 +49,14 @@ $(document).ready(function() {
 
   //registration form ajax
   $('#registration').on('submit',function(e) {
-  	  // e.preventDefault();
-  	  var getFormData = {};
-	$("#registration input").each(function() {
-	    getFormData[$(this).attr("name")] = $(this).val();
-	});
-	var selectedCOuntryCode = $('.country.active .dial-code').text();
-	getFormData['phoneNumber'] = selectedCOuntryCode + getFormData['phoneNumber'];
-	console.log(getFormData); 
+    // e.preventDefault();
+    var getFormData = {};
+  	$("#registration input").each(function() {
+  	    getFormData[$(this).attr("name")] = $(this).val();
+  	});
+  	var selectedCOuntryCode = $('.country.active .dial-code').text();
+  	getFormData['phoneNumber'] = selectedCOuntryCode + getFormData['phoneNumber'];
+  	$('#phoneNumber').val(getFormData['phoneNumber']);
   	 
 	});
 
