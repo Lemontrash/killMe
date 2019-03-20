@@ -2173,7 +2173,7 @@ __webpack_require__.r(__webpack_exports__);
           //     status: false,
           //   },
           // };
-          n.is_approved = false;
+          n.is_approved = n.is_approved == 'yes' ? true : false;
           return n;
         });
         _this.data = res.data;
@@ -2187,6 +2187,11 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.opened.push(id_user);
       }
+    },
+    changeStatus: function changeStatus(status, id) {
+      axios.post('/admin/changeUserStatus/' + id, {
+        status: status
+      });
     }
   },
   created: function created() {
@@ -4029,6 +4034,11 @@ var render = function() {
                     { staticClass: "text-center" },
                     [
                       _c("app-switch", {
+                        on: {
+                          input: function($event) {
+                            return _vm.changeStatus($event, user.id)
+                          }
+                        },
                         model: {
                           value: user.is_approved,
                           callback: function($$v) {

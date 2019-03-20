@@ -21,7 +21,7 @@
             <th>{{ user.mobile }}</th>
             <th>{{ user.email }}</th>
             <th class="text-center">
-              <app-switch v-model="user.is_approved"/>
+              <app-switch @input="changeStatus($event, user.id)" v-model="user.is_approved"/>
             </th>
             <th class="text-center">Individual</th>
           </tr>
@@ -69,7 +69,7 @@ export default {
           //     status: false,
           //   },
           // };
-          n.is_approved = false;
+          n.is_approved = n.is_approved == 'yes' ? true : false;
           return n;
         });
         this.data = res.data;
@@ -81,6 +81,11 @@ export default {
       } else {
         this.opened.push(id_user);
       }
+    },
+    changeStatus(status, id) {
+      axios.post('/admin/changeUserStatus/' + id, {
+        status: status
+      });
     }
   },
   created() {

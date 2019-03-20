@@ -69,7 +69,7 @@ Route::get('/admin/downloadPdf/{id}',    'AdminController@downloadPdf')->name('d
 
 Route::get('/admin/files',      'AdminController@showAccountVerifictionFiles');
 Route::get('/admin/usersWithPdf',      'AdminController@showUsersWithPdf');
-Route::post('/admin/changeUserStatus',      'AdminController@changeUserStatus');
+Route::post('/admin/changeUserStatus/{id}',      'AdminController@changeUserStatus');
 
 // ?????????????????????????????????
 Route::get('/pdf', 'PdfController@show')->name('pdf');
