@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 //use Laravel\Passport\HasApiTokens;
 
 class Business extends Authenticatable
+    implements MustVerifyEmail
 {
     use  Notifiable;
     protected $table = 'users';

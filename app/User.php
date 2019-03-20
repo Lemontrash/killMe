@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 //use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
-//    implements MustVerifyEmail
+    implements MustVerifyEmail
 {
     use  Notifiable;
 

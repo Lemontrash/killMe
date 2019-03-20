@@ -19,11 +19,11 @@ class Admin
     {
 //    dd(!Auth::check());
         if (!Auth::check()){
-            return back();
+            return redirect('/');
         }
         else if (Auth::user()->role == 'admin'){
             return $next($request);
         }
-        return back();
+        return redirect('/');
     }
 }

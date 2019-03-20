@@ -45,8 +45,13 @@ class HomeController extends Controller
         return view('uploadFiles');
     }
     public function showDeposit(){
-        $file = Files::where('user_id', Auth::id())->first();
-        return view('profileExchange', ['file' => $file]);
+//        $file =
+//        dd($file);
+        if (Files::where('user_id', Auth::id())->first()){
+            $file = Files::where('user_id', Auth::id())->first();
+            return view('profileExchange', ['file' => $file]);
+        }
+        return view('profileExchangeEmpty');
     }
     public function showPersonalDataVerify(){
         $users = User::where('role', 'business')->get();
@@ -54,22 +59,25 @@ class HomeController extends Controller
     }
 
     public function showFilesHistory(){
-        $rule = Files::where('user_id', Auth::id())->where('amount', '>', 0);
+        $rule = Files::where('user_id', 1)->where('amount', '>', 0);
+//        dd($rule);
         if (User::find(Auth::id())->role == 'individual'){
             $files = $rule->get();
+
         }
-        elseif (User::find(Auth::id())->role == 'business'){
+        elseif (User::find(1)->role == 'business'){
             $files = $rule->get();
+//            dd($files);
             $individuals = User::where('relation_id', Auth::id())->get();
+//            dd($individuals);
             foreach ($individuals as $user){
                 $fileCollection = Files::where('user_id', $user->id)->where('amount', '>', 0)->get();
-
-//                dd($fileCollection);
+//
                 foreach ($fileCollection as $item) {
                     $files[] = $item;
 //                    dd($files);
                 }
-//                dd($files);
+//
             }
         }
 //        dd($files);
@@ -120,6 +128,7 @@ class HomeController extends Controller
 //                dd($files);
             }
         }
+
         return $files;
     }
 
@@ -133,7 +142,7 @@ class HomeController extends Controller
         return view('profileContactUs');
     }
     public function showAcceptUser(){
-        $users = User::where('company', Auth::user()->company)->get();
+        $users = User::where('company', Auth::user()->company)->where('role', 'individual')->get();
         return view('acceptUser', ['users' => $users]);
     }
 

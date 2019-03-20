@@ -98,6 +98,7 @@ class RegisterController extends Controller
             ]);
 
         }
+<<<<<<< HEAD
 
 //         $file = Files::create([
 //             'user_id'            => $user->id,
@@ -122,6 +123,32 @@ class RegisterController extends Controller
 //             'countryTaxes'      => 'countryTaxes',
 //             'approved'          => 'yes'
 //         ]);
+=======
+        //7055555
+//        $file = Files::create([
+//            'user_id'            => $user->id,
+////            'firstName'         => Auth::user()->firstName,
+////            'secondName'        => $secondname,
+////            'lastName'          => Auth::user()->lastName,
+//            'country'           => 'country',
+//            'citizenship'       => 'citizenship' ,
+//            'placeOfBirth'      => 'placeOfBirth',
+//            'address'           => 'address'  ,
+//            'landLine'          => 'landLine' ,
+//            'city'              => 'city' ,
+//            'zip'               => 'zip',
+//            'employment'        => 'employment',
+//            'industry'          => 'industry'  ,
+//            'annualIncome'      => 'annualIncome',
+//            'savings'           => 'savings' ,
+//            'sourceOfFunds'     => 'sourceOfFunds',
+//            'investAnnually'    => 'investAnnually',
+//            'nameOfBank'        => 'nameOfBank',
+//            'taxId'             => 'taxId',
+//            'countryTaxes'      => 'countryTaxes',
+//            'approved'          => 'yes'
+//        ]);
+>>>>>>> master
 
         return $user;
 

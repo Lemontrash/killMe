@@ -115,27 +115,22 @@ class AdminController extends Controller
     }
 
     public function downloadPdf($id){
-        $file = Files::find($id);
+//        dd(123);
+        $file = Files::where('id', $id)->first();
+        $user = \App\User::where('id', $file->user_id)->first();
         $data = [
-            'country'           => $file->country,
-            'citizenship'       => $file->citizenship,
-            'placeOfBirth'      => $file->placeOfBirth,
-            'address'           => $file->address,
-            'landLine'          => $file->landLine,
-            'city'              => $file->city,
-            'zip'               => $file->zip,
-            'employment'        => $file->employment,
-            'industry'          => $file->industry,
-            'annualIncome'      => $file->annualIncome,
-            'savings'           => $file->savings,
-            'sourceOfFunds'     => $file->sourceOfFunds,
-            'investAnnually'    => $file->investAnnually,
-            'nameOfBank'        => $file->nameOfBank,
-            'taxId'             => $file->taxId,
-            'countryTaxes'      => $file->countryTaxes,
+            'firstName'                 => $user->firstName,
+            'lastName'                  => $user->lastName,
+            'beneficiaryName'           => $file->beneficiaryName,
+            'beneficiaryAddress'        => $file->beneficiaryAddress,
+            'bankName'                  => $file->bankName,
+            'bankLocation'              => $file->bankLocation,
+            'swift'                     => $file->swift,
+            'referenceField'            => $file->referenceField,
+            'iban'                      => $file->iban,
+            'amount'                      => $file->amount,
         ];
-        $pdf = Facade::loadView('pdfmaked', $data);
-
+        $pdf = Facade::loadView('pdf.pdf', $data);;
         return $pdf->stream();
     }
     public function downloadId($id){
@@ -157,7 +152,7 @@ class AdminController extends Controller
 
     public function showMessages(){
         $messages = Messages::all();
-        return view('admin.messages', ['messages' => $messages]);
+        return response()->json($messages);
     }
 
     public function showAccountVerifictionFiles(){
