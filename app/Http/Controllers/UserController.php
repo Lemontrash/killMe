@@ -111,7 +111,7 @@ class UserController extends Controller
         Auth::user()->company = $company;
         Auth::user()->save();
         return redirect('deposit');
-    }
+    } 
 
     public function createNewExchange(Request $request){
         $amount = $request->get('amount');
