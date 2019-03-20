@@ -1,6 +1,6 @@
 <?php
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth'] ], function () {
     Route::get('/profile',      'HomeController@showProfileSettings')       ->name('profileSettings');
