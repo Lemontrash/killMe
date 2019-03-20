@@ -11,18 +11,18 @@
 	<div class="post-header">Wire Deposit Form</div>
 
 	<div class="blue-row">Customer Information</div>
-	<div class="gray-row">Full Name: <span class="value">{{}}</span></div>
+	<div class="gray-row">Full Name: <span class="value">{{$firstName. ' ' . $lastName}}</span></div>
 	<div class="gray-row">Payment Details: <span class="value">To FXGlobe</span></div>
-	<div class="gray-row">Amount: <span class="value">59</span></div>
+	<div class="gray-row">Amount: <span class="value">{{$amount}}</span></div>
 	<div class="gray-row">Currency: <span class="value">EUR</span></div>
 
 	<div class="blue-row">Electronic Wire Transfer Instructions</div>
-	<div class="gray-row">Beneficiary name: <span class="value">FXGLOBE LTD</span></div>
-	<div class="gray-row">Beneficiary Address: <span class="value">7 Omirou Street, 2nd Floor Limassol 3095, Cyprus</span></div>
-	<div class="gray-row">Bank name: <span class="value">Powszechna Kasa Oszczednosci Bank Polski Sa</span></div>
-	<div class="gray-row">Bank address: <span class="value">Nowogrodzka 35/41, 00-950 , Warszawa, Poland</span></div>
-	<div class="gray-row">IBAN: <span class="value">PL97 1020 1026 0000 1402 0275 9900</span></div>
-	<div class="gray-row">Swift: <span class="value">BPKOPLPW</span></div>
+	<div class="gray-row">Beneficiary name: <span class="value">{{$beneficiaryName}}</span></div>
+	<div class="gray-row">Beneficiary Address: <span class="value">{{$beneficiaryAddress}}</span></div>
+	<div class="gray-row">Bank name: <span class="value">{{$bankName}}</span></div>
+	<div class="gray-row">Bank address: <span class="value">{{$bankLocation}}</span></div>
+	<div class="gray-row">IBAN: <span class="value">{{$iban}}</span></div>
+	<div class="gray-row">Swift: <span class="value">{{$swift}}</span></div>
 	<div class="gray-row">Currency: <span class="value">EUR</span></div>
 
 	<div class="footer">All rights reserved to Guruchange 2019 ©</div>
@@ -53,32 +53,32 @@
 			background-size: cover;
 			background-image: linear-gradient(318deg, #202a40 0%, #0a1425);
 			text-align: center;
-			padding-top: 250px;
-			padding-bottom: 80px;
+			padding-top: 59pt;
+			padding-bottom: 19pt;
 			font-family: "Rubik Bold";
-			font-size: 92px;
+			font-size: 22pt;
 			color: #fff;
 		}
 		.post-header{
-			padding: 50px 0;
+			padding: 12pt 0;
 			color: #121c2e;
 			font-family: "Rubik Bold";
-			font-size: 83px;
-			padding-right: 200px;
-			padding-left: 200px;
+			font-size: 20pt;
+			padding-right: 48pt;
+			padding-left: 48pt;
 		}
 		.blue-row{
-			padding: 50px 200px;
-			font-size: 53px;
+			padding: 12pt 48pt;
+			font-size: 12.7pt;
 			color: #fff;
 			font-family: "Rubik Bold";
 			background-color: #343c53;
 		}
 		.gray-row{
-			padding: 40px 200px;
+			padding: 9.5pt 48pt;
 			background: #EBEBEC;
 			color: #8b8b8b;
-			font-size: 45px;
+			font-size: 10.7pt;
 		}
 		.gray-row:nth-child(2n+1){
 			background-color: #E1E2E5;
@@ -89,10 +89,10 @@
 		}
 		.footer{
 			font-family: "Rubik Bold";
-			font-size: 42px;
+			font-size: 10pt;
 			color: #262c3e;
 			position: absolute;
-			bottom: 80px;
+			bottom: 19pt;
 			text-align: center;
 			width: 100%;
 		}

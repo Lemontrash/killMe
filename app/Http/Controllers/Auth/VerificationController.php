@@ -26,7 +26,7 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/personalData';
     public function show(Request $request)
     {
         return view('auth.verify');

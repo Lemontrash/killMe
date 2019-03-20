@@ -8,6 +8,8 @@ use App\Files;
 use App\Individual;
 use Barryvdh\DomPDF\Facade;
 use Barryvdh\DomPDF\PDF;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use FontLib\AdobeFontMetrics;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
@@ -81,36 +83,25 @@ class PdfController extends Controller
             'countryTaxes'      => $TAXCountry,
         ]);
 
-
         return response()->json($file);
-
-//        $pdf = Facade::loadView('pdfmaked', $data);
-//
-//        return $pdf->stream();
-
     }
 
     public function getPdfFromProfile($id){
         $file = Files::where('id', $id)->first();
+        $user = \App\User::where('id', $file->user_id)->first();
         $data = [
-            'country'           => $file->countrytname,
-            'citizenship'       => $file->cityzenship,
-            'placeOfBirth'      => $file->plasceofbirth,
-            'address'           => $file->address,
-            'landLine'          => $file->landLine,
-            'city'              => $file->city,
-            'zip'               => $file->zip,
-            'employment'        => $file->employment,
-            'industry'          => $file->industry,
-            'annualIncome'      => $file->annualIncome,
-            'savings'           => $file->savings,
-            'sourceOfFunds'     => $file->sourceOfFunds,
-            'investAnnually'    => $file->investAnnually,
-            'nameOfBank'        => $file->nameOfBank,
-            'taxId'             => $file->TAX,
-            'countryTaxes'      => $file->TAXCountry,
+            'firstName'                 => $user->firstName,
+            'lastName'                  => $user->lastName,
+            'beneficiaryName'           => $file->beneficiaryName,
+            'beneficiaryAddress'        => $file->beneficiaryAddress,
+            'bankName'                  => $file->bankName,
+            'bankLocation'              => $file->bankLocation,
+            'swift'                     => $file->swift,
+            'referenceField'            => $file->referenceField,
+            'iban'                      => $file->iban,
+            'amount'                      => $file->amount,
         ];
-        $pdf = Facade::loadView('pdfmaked', $data);
+        $pdf = Facade::loadView('pdf.pdf', $data);;
         return $pdf->stream();
     }
 

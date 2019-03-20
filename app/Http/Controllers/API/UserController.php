@@ -96,7 +96,35 @@ class UserController extends Controller
             return response()->json(['error'=>'Unauthorised'], 401);
         }
     }
-
+    public function createVerificationFileForPdf(Request $request){
+        $beneficiaryName        = $request->get('beneficiary_name');
+        $beneficiaryAddress     = $request->get('beneficiary_address');
+        $bankName               = $request->get('bank_name');
+        $bankAdress             = $request->get('bank_address');
+        $iban                   = $request->get('iban');
+        $swift                  = $request->get('swift');
+        $reference              = $request->get('reference');
+        $company                = $request->get('company');
+        if (Auth::user()->role == 'business'){
+            $company = $request->get('companyName');
+        }
+        $file = Files::create([
+                'user_id' => Auth::id(),
+                'beneficiaryName' => $beneficiaryName,
+                'beneficiaryAddress' => $beneficiaryAddress,
+                'bankName' => $bankName,
+                'bankLocation' => $bankAdress,
+                'iban' => $iban,
+                'swift' => $swift,
+                'referenceField' => $reference,
+                'company' => $company,
+                'amount' => 0,
+            ]
+        );
+        Auth::user()->company = $company;
+        Auth::user()->save();
+        return redirect('deposit');
+    }
     public function register(Request $request)
     {
 
