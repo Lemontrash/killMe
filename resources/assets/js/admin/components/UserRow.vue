@@ -60,7 +60,7 @@
         </div>
         <div class="title">Files</div>
       </div>
-      <div class="transfer">
+      <!-- <div class="transfer">
         <div class="item">
           <div class="date">
             15 / 02 / 2019
@@ -78,7 +78,7 @@
           </div>
         </div>
         <div class="title">Transfer Requests</div>
-      </div>
+      </div> -->
     </td>
   </tr>
 </template>
@@ -171,6 +171,9 @@ export default {
 
 .user-menu {
   border-bottom: 1px solid $clr-d-gray;
+  td[colspan="6"] {
+    padding: 0;
+  }
   .files {
     display: flex;
     flex-direction: row;

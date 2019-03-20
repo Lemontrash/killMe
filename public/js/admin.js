@@ -2217,7 +2217,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".user-menu[data-v-5f3c5430] {\n  border-bottom: 1px solid rgba(142, 205, 246, 0.1);\n}\n.user-menu .files[data-v-5f3c5430] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: stretch;\n  padding: 40px 0;\n  position: relative;\n}\n.user-menu .files .item[data-v-5f3c5430] {\n  padding-right: 40px;\n  padding-left: 30px;\n  border-right: 1px solid rgba(142, 205, 246, 0.1);\n}\n.user-menu .files .item .head[data-v-5f3c5430] {\n  font-weight: bold;\n  color: #fff;\n  font-size: 18px;\n}\n.user-menu .files .item .sub-text[data-v-5f3c5430] {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.user-menu .files .item .switch[data-v-5f3c5430] {\n  margin: 10px 0;\n}\n.user-menu .files .item button[data-v-5f3c5430] {\n  color: #fff;\n}\n.user-menu .files .item[data-v-5f3c5430]:last-child {\n  border-right: 0;\n}\n.user-menu .files .item[data-v-5f3c5430]:first-child {\n  padding-left: 0;\n}\n.user-menu .transfer[data-v-5f3c5430] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: stretch;\n  border-top: 1px solid rgba(142, 205, 246, 0.1);\n  padding: 40px 0;\n  position: relative;\n}\n.user-menu .transfer .item[data-v-5f3c5430] {\n  padding: 0 30px;\n  border-right: 1px solid rgba(142, 205, 246, 0.1);\n  text-align: center;\n}\n.user-menu .transfer .item .date[data-v-5f3c5430] {\n  color: rgba(255, 255, 255, 0.5);\n  padding-bottom: 15px;\n}\n.user-menu .transfer .item .theme-btn[data-v-5f3c5430] {\n  font-size: 10px;\n  padding: 0 15px;\n  height: 30px;\n}\n.user-menu .transfer .item[data-v-5f3c5430]:last-child {\n  border-right: 0;\n}\n.user-menu .transfer .item[data-v-5f3c5430]:first-child {\n  padding-left: 0;\n}\n.user-menu .files .title[data-v-5f3c5430],\n.user-menu .transfer .title[data-v-5f3c5430] {\n  position: absolute;\n  font-size: 15px;\n  font-weight: bold;\n  color: #fff;\n  top: -12px;\n  left: 0;\n  height: 20px;\n  line-height: 20px;\n  background: #343c53;\n  padding-right: 10px;\n}", ""]);
+exports.push([module.i, ".user-menu[data-v-5f3c5430] {\n  border-bottom: 1px solid rgba(142, 205, 246, 0.1);\n}\n.user-menu td[colspan=\"6\"][data-v-5f3c5430] {\n  padding: 0;\n}\n.user-menu .files[data-v-5f3c5430] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: stretch;\n  padding: 40px 0;\n  position: relative;\n}\n.user-menu .files .item[data-v-5f3c5430] {\n  padding-right: 40px;\n  padding-left: 30px;\n  border-right: 1px solid rgba(142, 205, 246, 0.1);\n}\n.user-menu .files .item .head[data-v-5f3c5430] {\n  font-weight: bold;\n  color: #fff;\n  font-size: 18px;\n}\n.user-menu .files .item .sub-text[data-v-5f3c5430] {\n  font-size: 12px;\n  color: rgba(255, 255, 255, 0.5);\n}\n.user-menu .files .item .switch[data-v-5f3c5430] {\n  margin: 10px 0;\n}\n.user-menu .files .item button[data-v-5f3c5430] {\n  color: #fff;\n}\n.user-menu .files .item[data-v-5f3c5430]:last-child {\n  border-right: 0;\n}\n.user-menu .files .item[data-v-5f3c5430]:first-child {\n  padding-left: 0;\n}\n.user-menu .transfer[data-v-5f3c5430] {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: stretch;\n  border-top: 1px solid rgba(142, 205, 246, 0.1);\n  padding: 40px 0;\n  position: relative;\n}\n.user-menu .transfer .item[data-v-5f3c5430] {\n  padding: 0 30px;\n  border-right: 1px solid rgba(142, 205, 246, 0.1);\n  text-align: center;\n}\n.user-menu .transfer .item .date[data-v-5f3c5430] {\n  color: rgba(255, 255, 255, 0.5);\n  padding-bottom: 15px;\n}\n.user-menu .transfer .item .theme-btn[data-v-5f3c5430] {\n  font-size: 10px;\n  padding: 0 15px;\n  height: 30px;\n}\n.user-menu .transfer .item[data-v-5f3c5430]:last-child {\n  border-right: 0;\n}\n.user-menu .transfer .item[data-v-5f3c5430]:first-child {\n  padding-left: 0;\n}\n.user-menu .files .title[data-v-5f3c5430],\n.user-menu .transfer .title[data-v-5f3c5430] {\n  position: absolute;\n  font-size: 15px;\n  font-weight: bold;\n  color: #fff;\n  top: -12px;\n  left: 0;\n  height: 20px;\n  line-height: 20px;\n  background: #343c53;\n  padding-right: 10px;\n}", ""]);
 
 // exports
 
@@ -3784,46 +3784,11 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("div", { staticClass: "title" }, [_vm._v("Files")])
-      ]),
-      _vm._v(" "),
-      _vm._m(0)
+      ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "transfer" }, [
-      _c("div", { staticClass: "item" }, [
-        _c("div", { staticClass: "date" }, [
-          _vm._v("\n          15 / 02 / 2019\n        ")
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("button", { staticClass: "theme-btn btn-blue" }, [
-            _vm._v("Download")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "item" }, [
-        _c("div", { staticClass: "date" }, [
-          _vm._v("\n          15 / 02 / 2019\n        ")
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("button", { staticClass: "theme-btn btn-blue" }, [
-            _vm._v("Download")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "title" }, [_vm._v("Transfer Requests")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
