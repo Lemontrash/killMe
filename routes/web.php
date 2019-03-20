@@ -75,12 +75,9 @@ Route::group(['middleware' => 'admin'], function () {
 
 
 
-<<<<<<< HEAD
 Route::get('/admin/files',      'AdminController@showAccountVerifictionFiles');
 Route::get('/admin/usersWithPdf',      'AdminController@showUsersWithPdf');
 Route::post('/admin/changeUserStatus/{id}',      'AdminController@changeUserStatus');
-=======
->>>>>>> master
 
 //Basic Routes For Profile
 Route::get('/',             'HomeController@showHome')                  ->name('home');
@@ -105,4 +102,3 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
 Route::post('/forgot', 'MailController@forgotPassword')->name('forgot');
-
