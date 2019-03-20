@@ -49,26 +49,26 @@ export default {
   },
   methods: {
     sync() {
-      axios.get('/admin/new-users').then(res => {
+      axios.get('/admin/files').then(res => {
         res.data = res.data.map(n => {
-          n.approved = {
-            picture: {
-              id: 0,
-              status: false,
-            },
-            selfie: {
-              id: 0,
-              status: false,
-            },
-            bank: {
-              id: 0,
-              status: false,
-            },
-            dod: {
-              id: 0,
-              status: false,
-            },
-          };
+          // n.approved = {
+          //   picture: {
+          //     id: 0,
+          //     status: false,
+          //   },
+          //   selfie: {
+          //     id: 0,
+          //     status: false,
+          //   },
+          //   bank: {
+          //     id: 0,
+          //     status: false,
+          //   },
+          //   dod: {
+          //     id: 0,
+          //     status: false,
+          //   },
+          // };
           n.is_approved = false;
           return n;
         });

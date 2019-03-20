@@ -2387,7 +2387,7 @@ var render = function() {
       attrs: {
         id: "upload_files",
         method: "POST",
-        action: "/uploadFiles",
+        action: "/store",
         enctype: "multipart/form-data"
       }
     },
@@ -14595,6 +14595,17 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./resources/assets/scss/admin/admin.scss":
+/*!************************************************!*\
+  !*** ./resources/assets/scss/admin/admin.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -14786,20 +14797,21 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/profile.sass ./resources/sass/main-page.sass ./resources/sass/upload-files.sass ./resources/sass/formpage.sass ./resources/sass/deposit.sass ./resources/sass/accept-user.sass ./resources/sass/common.sass ***!
-  \****************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/profile.sass ./resources/sass/main-page.sass ./resources/sass/upload-files.sass ./resources/sass/formpage.sass ./resources/sass/deposit.sass ./resources/sass/accept-user.sass ./resources/sass/common.sass ./resources/assets/scss/admin/admin.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/a.skuropatov/sites/exchange/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/a.skuropatov/sites/exchange/resources/sass/profile.sass */"./resources/sass/profile.sass");
-__webpack_require__(/*! /Users/a.skuropatov/sites/exchange/resources/sass/main-page.sass */"./resources/sass/main-page.sass");
-__webpack_require__(/*! /Users/a.skuropatov/sites/exchange/resources/sass/upload-files.sass */"./resources/sass/upload-files.sass");
-__webpack_require__(/*! /Users/a.skuropatov/sites/exchange/resources/sass/formpage.sass */"./resources/sass/formpage.sass");
-__webpack_require__(/*! /Users/a.skuropatov/sites/exchange/resources/sass/deposit.sass */"./resources/sass/deposit.sass");
-__webpack_require__(/*! /Users/a.skuropatov/sites/exchange/resources/sass/accept-user.sass */"./resources/sass/accept-user.sass");
-module.exports = __webpack_require__(/*! /Users/a.skuropatov/sites/exchange/resources/sass/common.sass */"./resources/sass/common.sass");
+__webpack_require__(/*! /Users/miroslaw/Documents/sources/php/killMe/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/miroslaw/Documents/sources/php/killMe/resources/sass/profile.sass */"./resources/sass/profile.sass");
+__webpack_require__(/*! /Users/miroslaw/Documents/sources/php/killMe/resources/sass/main-page.sass */"./resources/sass/main-page.sass");
+__webpack_require__(/*! /Users/miroslaw/Documents/sources/php/killMe/resources/sass/upload-files.sass */"./resources/sass/upload-files.sass");
+__webpack_require__(/*! /Users/miroslaw/Documents/sources/php/killMe/resources/sass/formpage.sass */"./resources/sass/formpage.sass");
+__webpack_require__(/*! /Users/miroslaw/Documents/sources/php/killMe/resources/sass/deposit.sass */"./resources/sass/deposit.sass");
+__webpack_require__(/*! /Users/miroslaw/Documents/sources/php/killMe/resources/sass/accept-user.sass */"./resources/sass/accept-user.sass");
+__webpack_require__(/*! /Users/miroslaw/Documents/sources/php/killMe/resources/sass/common.sass */"./resources/sass/common.sass");
+module.exports = __webpack_require__(/*! /Users/miroslaw/Documents/sources/php/killMe/resources/assets/scss/admin/admin.scss */"./resources/assets/scss/admin/admin.scss");
 
 
 /***/ })
