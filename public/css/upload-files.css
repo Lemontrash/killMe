@@ -1,0 +1,62 @@
+.upload-btn {
+  height: 35px;
+  background-color: transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+.upload-btn input[type=file] {
+  display: none;
+}
+
+.upload-btn svg {
+  height: 23px;
+  width: 23px;
+  fill: #fff;
+  margin-right: 10px;
+}
+
+.upload-btn:hover {
+  background-color: #009aff;
+}
+
+#upload_files .inp-wrap {
+  margin-bottom: 5px;
+}
+
+#upload_files .theme-row {
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#upload_files .upload-btn {
+  margin-left: 30px;
+}
+
+#upload_files .text-inp-group input {
+  width: 340px;
+}
+
+.all-file-upload {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 26px;
+  padding-left: 26px;
+}
+
+.all-file-upload .text-col {
+  width: 60%;
+}
+
+.all-file-upload input {
+  display: none;
+}
+
+.all-file-upload small {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.all-file-upload p {
+  margin-top: 0;
+}
+

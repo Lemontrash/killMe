@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+.profile-exchange-form {
+  margin-top: 40px;
+}
+
+.profile-exchange-form .theme-row {
+  margin-bottom: 12px;
+}
+
+.profile-exchange-form .theme-btn {
+  border-radius: 10px;
+  font-weight: 700;
+  position: relative;
+}
+
+.profile-exchange-form .theme-btn:after {
+  content: "";
+  width: 24px;
+  height: 10px;
+  background: url("/img/arrow-right1.svg") no-repeat center;
+  background-size: cover;
+  position: absolute;
+  right: 24px;
+}
+
+.profile-exchange-form .theme-btn,
+.profile-exchange-form .amount-inp {
+  width: 470px;
+}
+
+.amount-inp {
+  position: relative;
+}
+
+.amount-inp input {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 45px;
+  padding: 0 80px 0 28px;
+  border: none;
+  color: #fff;
+  width: 100%;
+  outline: none;
+}
+
+.amount-inp input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.amount-inp input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.amount-inp input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.amount-inp input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.amount-inp:after {
+  content: "\20AC   Euro";
+  color: #fff;
+  font-weight: 400;
+  position: absolute;
+  right: 24px;
+  top: 0;
+  line-height: 45px;
+}
+

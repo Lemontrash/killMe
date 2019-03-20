@@ -1,0 +1,42 @@
+.profile-exchange-form
+	margin-top: 40px
+	.theme-row
+		margin-bottom: 12px
+	.theme-btn
+		border-radius: 10px
+		font-weight: 700
+		position: relative
+		&:after
+			content: ''
+			width: 24px
+			height: 10px
+			background: url('/img/arrow-right1.svg') no-repeat center
+			background-size: cover
+			position: absolute
+			right: 24px
+
+	.theme-btn,
+	.amount-inp
+		width: 470px
+.amount-inp
+	position: relative
+	input
+		border-radius: 10px
+		background-color: rgba(255,255,255,.1)
+		height: 45px
+		padding: 0 80px 0 28px
+		border: none
+		color: #fff
+		width: 100%
+		outline: none
+		&::placeholder
+			color: rgba(255,255,255,.5)
+	&:after
+		content: '€ Euro'
+		color: #fff
+		font-weight: 400
+		position: absolute
+		right: 24px
+		top: 0
+		line-height: 45px
+

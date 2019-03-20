@@ -1,0 +1,56 @@
+.table .user-files {
+  padding: 0;
+}
+
+.user-files hr {
+  width: auto;
+  flex-grow: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-left: 20px;
+}
+
+.user-files .col {
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-files .col:first-child {
+  padding-left: 0;
+}
+
+.user-files .col:last-child {
+  border-right: none;
+}
+
+.user-files .col .view-files {
+  color: #fff;
+  text-decoration: none;
+  padding-right: 25px;
+  padding-left: 30px;
+  line-height: 30px;
+  display: inline-block;
+  background: url("/img/copy-files-white.png") no-repeat left center, url("/img/ico-angle-bracket-white.svg") no-repeat right center;
+  background-size: 17px 21px, 14px 14px;
+  margin-top: 20px;
+}
+
+.user-files .col small {
+  margin: 10px 0;
+}
+
+.company-users-table .theme-btn {
+  height: 35px;
+  outline: none;
+}
+
+.user-files-inner {
+  padding: 20px;
+}
+
