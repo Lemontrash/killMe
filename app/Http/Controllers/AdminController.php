@@ -52,9 +52,8 @@ class AdminController extends Controller
 //            $response['user-'.$i]['phone'] = $item->mobile;
 //            $i++;
 //        }
-        $response = DB::select('select * from users where id in (select user_id from account_verification_files)');
+        $response = DB::select('select * from users where id in (select user_id from account_verification_files )');
 //        $i = 0;
-
         return $response;
     }
 
@@ -175,6 +174,7 @@ class AdminController extends Controller
 
     public function showAccountVerifictionFiles(){
         $files = AccountVerificationFiles::all();
+        $users = \GuzzleHttp\json_decode(json_encode($this->getUsersWithFiles()), true);
         foreach($files as $file){
             $statusId = false;
             $statusSelfie = false;
@@ -192,36 +192,44 @@ class AdminController extends Controller
             if ($file->dod_approved == 'yes'){
                 $statusDod = true;
             }
-            $approved[] = ['approved' => [
-                'picture' => [
-                    'id' => $file->id,
-                    'user_id' => $file->user_id,
-                    'status' => $statusId,
-                ],
-                'selfie' => [
-                    'id' => $file->id,
-                    'user_id' => $file->user_id,
-                    'status' => $statusSelfie,
-                ],
-                'bank' => [
-                    'id' => $file->id,
-                    'user_id' => $file->user_id,
-                    'status' => $statusBank,
-                ],
-                'dod' => [
-                    'id' => $file->id,
-                    'user_id' => $file->user_id,
-                    'status' => $statusDod,
-                ]
-            ]
-            ];
-        }
-        $response[] = $approved;
-//        foreach ($approved[0]['approved'] as $item) {
-////            dd($item[]);
-//        }
-        return response()->json($response);
+
+
+            foreach ( $users as $i => $user){
+//                dd($users);
+                $user = json_encode($user);
+                $user = \GuzzleHttp\json_decode($user, true);
+                if ($user['id'] == $file->user_id){
+                    $approved = [
+                        'picture' => [
+                            'id' => $file->id,
+                            'user_id' => $file->user_id,
+                            'status' => $statusId,
+                        ],
+                        'selfie' => [
+                            'id' => $file->id,
+                            'user_id' => $file->user_id,
+                            'status' => $statusSelfie,
+                        ],
+                        'bank' => [
+                            'id' => $file->id,
+                            'user_id' => $file->user_id,
+                            'status' => $statusBank,
+                        ],
+                        'dod' => [
+                            'id' => $file->id,
+                            'user_id' => $file->user_id,
+                            'status' => $statusDod,
+                        ]
+                    ];
+                    $users[$i]['approved'] = $approved;
+
+                }
+
+            }
+//            dd($users);
+
+
     }
-
-
+        return response()->json($users);
+    }
 }
