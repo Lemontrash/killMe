@@ -54,25 +54,25 @@ class AdminController extends Controller
     public function approveId($id){
         $file = AccountVerificationFiles::find($id);
         $file->id_approved = 'yes';
-        $file->save;
+        $file->save();
         return response()->json('success');
     }
     public function approveSelfie($id){
         $file = AccountVerificationFiles::find($id);
         $file->selfie_approved = 'yes';
-        $file->save;
+        $file->save();
         return response()->json('success');
     }
     public function approveBank($id){
         $file = AccountVerificationFiles::find($id);
         $file->bank_approved = 'yes';
-        $file->save;
+        $file->save();
         return response()->json('success');
     }
     public function approveDod($id){
         $file = AccountVerificationFiles::find($id);
         $file->dod_approved = 'yes';
-        $file->save;
+        $file->save();
         return response()->json('success');
     }
 
@@ -86,25 +86,25 @@ class AdminController extends Controller
     public function dismissId($id){
         $file = AccountVerificationFiles::find($id);
         $file->id_approved = 'no';
-        $file->save;
+        $file->save();
         return response()->json('success');
     }
     public function dismissSelfie ($id){
         $file = AccountVerificationFiles::find($id);
         $file->selfie_approved = 'no';
-        $file->save;
+        $file->save();
         return response()->json('success');
     }
     public function dismissBank ($id){
         $file = AccountVerificationFiles::find($id);
         $file->bank_approved = 'no';
-        $file->save;
+        $file->save();
         return response()->json('success');
     }
     public function dismissDod ($id){
         $file = AccountVerificationFiles::find($id);
         $file->dod_approved = 'no';
-        $file->save;
+        $file->save();
         return response()->json('success');
     }
 
@@ -168,7 +168,7 @@ class AdminController extends Controller
             $statusSelfie = false;
             $statusBank = false;
             $statusDod = false;
-//            dd($file->id_approved);
+
             if ($file->id_approved == 'yes'){
                 $statusId = true;
             }
@@ -184,7 +184,7 @@ class AdminController extends Controller
 
 
             foreach ( $users as $i => $user){
-//                dd($users);
+
                 $user = json_encode($user);
                 $user = \GuzzleHttp\json_decode($user, true);
                 if ($user['id'] == $file->user_id){
@@ -215,7 +215,6 @@ class AdminController extends Controller
                 }
 
             }
-           // dd($users);
 
 
     }
@@ -223,9 +222,11 @@ class AdminController extends Controller
     }
 
     public function showUsersWithPdf(){
-
         $files = Files::where('amount', '>', 0)->get();
-
-        return response()->json($files);
+        $users = DB::select('select * from users where id in (select user_id from files )');
+        $response['files'] = $files;
+        $response['users'] = $users;
+//        dd($responce);
+        return response()->json($response);
     }
 }
