@@ -211,14 +211,22 @@ class AdminController extends Controller
                         ]
                     ];
                     $users[$i]['approved'] = $approved;
-
                 }
-
             }
-
-
-    }
+        }
         return response()->json($users);
+    }
+
+    public function changeUserStatus($id, Request $request){
+        $user = User::find($id);
+        if ($request->get('status') == true){
+            $user->is_approved = 'yes';
+        }
+        if ($request->get('status') == false){
+            $user->is_approved = 'no';
+        }
+        $user->save();
+        return response()->json('success');
     }
 
     public function showUsersWithPdf(){
