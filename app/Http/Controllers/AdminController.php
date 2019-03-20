@@ -36,26 +36,14 @@ class AdminController extends Controller
     }
 
     public function getUsersWithFiles(){
-//        $files = AccountVerificationFiles::all();
-//        foreach ($files as $file) {
-//            $user = User::where('id', $file->user_id)->first();
-//            $collection[] = $user;
-//        }
-//        $i = 0;
-//        foreach ($collection as $item) {
-//            $response['user-'.$i]['id'] = $item->id;
-//            $response['user-'.$i]['email'] = $item->email;
-//            $response['user-'.$i]['firstName'] = $item->firstName;
-//            $response['user-'.$i]['lastName'] = $item->lastName;
-//            $response['user-'.$i]['city'] = $item->city;
-//            $response['user-'.$i]['country'] = $item->country;
-//            $response['user-'.$i]['phone'] = $item->mobile;
-//            $i++;
-//        }
         $response = DB::select('select * from users where id in (select user_id from account_verification_files )');
-//        $i = 0;
         return $response;
     }
+
+//    public function getUsersWithPdf(){
+//        $response = DB::select('select * from users where id in (select user_id from files where files.amount > 0)');
+//        return $response;
+//    }
 
     public function approvePdf($id){
         $file = Files::find($id);
@@ -180,6 +168,7 @@ class AdminController extends Controller
             $statusSelfie = false;
             $statusBank = false;
             $statusDod = false;
+//            dd($file->id_approved);
             if ($file->id_approved == 'yes'){
                 $statusId = true;
             }
@@ -231,5 +220,12 @@ class AdminController extends Controller
 
     }
         return response()->json($users);
+    }
+
+    public function showUsersWithPdf(){
+
+        $files = Files::where('amount', '>', 0)->get();
+
+        return response()->json($files);
     }
 }
