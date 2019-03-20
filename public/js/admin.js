@@ -2005,6 +2005,18 @@ __webpack_require__.r(__webpack_exports__);
           _this4.user.approved.dod.status = false;
         });
       }
+    },
+    downloadPicture: function downloadPicture(id_file) {
+      axios.get('/admin/downloadId/' + id_file).then(function (res) {});
+    },
+    downloadSelfie: function downloadSelfie(id_file) {
+      axios.get('/admin/downloadSelfie/' + id_file).then(function (res) {});
+    },
+    downloadBank: function downloadBank(id_file) {
+      axios.get('/admin/downloadBank/' + id_file).then(function (res) {});
+    },
+    downloadDod: function downloadDod(id_file) {
+      axios.get('/admin/downloadDod/' + id_file).then(function (res) {});
     }
   },
   components: {
@@ -3666,7 +3678,11 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _vm._m(0)
+            _c("button", { on: { click: _vm.downloadPicture } }, [
+              _c("i", { staticClass: "fa fa-copy" }),
+              _vm._v("\n          View Files\n          "),
+              _c("i", { staticClass: "fa fa-angle-right" })
+            ])
           ],
           1
         ),
@@ -3694,7 +3710,11 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _vm._m(1)
+            _c("button", { on: { click: _vm.downloadSelfie } }, [
+              _c("i", { staticClass: "fa fa-copy" }),
+              _vm._v("\n          View Files\n          "),
+              _c("i", { staticClass: "fa fa-angle-right" })
+            ])
           ],
           1
         ),
@@ -3722,7 +3742,11 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _vm._m(2)
+            _c("button", { on: { click: _vm.downloadBank } }, [
+              _c("i", { staticClass: "fa fa-copy" }),
+              _vm._v("\n          View Files\n          "),
+              _c("i", { staticClass: "fa fa-angle-right" })
+            ])
           ],
           1
         ),
@@ -3750,7 +3774,11 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _vm._m(3)
+            _c("button", { on: { click: _vm.downloadDod } }, [
+              _c("i", { staticClass: "fa fa-copy" }),
+              _vm._v("\n          View Files\n          "),
+              _c("i", { staticClass: "fa fa-angle-right" })
+            ])
           ],
           1
         ),
@@ -3758,51 +3786,11 @@ var render = function() {
         _c("div", { staticClass: "title" }, [_vm._v("Files")])
       ]),
       _vm._v(" "),
-      _vm._m(4)
+      _vm._m(0)
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", [
-      _c("i", { staticClass: "fa fa-copy" }),
-      _vm._v("\n          View Files\n          "),
-      _c("i", { staticClass: "fa fa-angle-right" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", [
-      _c("i", { staticClass: "fa fa-copy" }),
-      _vm._v("\n          View Files\n          "),
-      _c("i", { staticClass: "fa fa-angle-right" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", [
-      _c("i", { staticClass: "fa fa-copy" }),
-      _vm._v("\n          View Files\n          "),
-      _c("i", { staticClass: "fa fa-angle-right" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", [
-      _c("i", { staticClass: "fa fa-copy" }),
-      _vm._v("\n          View Files\n          "),
-      _c("i", { staticClass: "fa fa-angle-right" })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

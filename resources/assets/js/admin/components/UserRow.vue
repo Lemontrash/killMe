@@ -10,7 +10,7 @@
             Files Status
           </div>
           <app-switch @input="updatePictureStatus" v-model="user.approved.picture.status"/>
-          <button>
+          <button @click="downloadPicture">
             <i class="fa fa-copy"></i>
             View Files
             <i class="fa fa-angle-right"></i>
@@ -24,7 +24,7 @@
             Files Status
           </div>
           <app-switch @input="updateSelfieStatus" v-model="user.approved.selfie.status"/>
-          <button>
+          <button @click="downloadSelfie">
             <i class="fa fa-copy"></i>
             View Files
             <i class="fa fa-angle-right"></i>
@@ -38,7 +38,7 @@
             Files Status
           </div>
           <app-switch @input="updateBankStatus" v-model="user.approved.bank.status"/>
-          <button>
+          <button @click="downloadBank">
             <i class="fa fa-copy"></i>
             View Files
             <i class="fa fa-angle-right"></i>
@@ -52,7 +52,7 @@
             Files Status
           </div>
           <app-switch @input="updateDODStatus" v-model="user.approved.dod.status"/>
-          <button>
+          <button @click="downloadDod">
             <i class="fa fa-copy"></i>
             View Files
             <i class="fa fa-angle-right"></i>
@@ -138,6 +138,26 @@ export default {
         });
       }
     },
+    downloadPicture(id_file) {
+      axios.get('/admin/downloadId/' + id_file).then(res => {
+
+      });
+    },
+    downloadSelfie(id_file) {
+      axios.get('/admin/downloadSelfie/' + id_file).then(res => {
+
+      });
+    },
+    downloadBank(id_file) {
+      axios.get('/admin/downloadBank/' + id_file).then(res => {
+
+      });
+    },
+    downloadDod(id_file) {
+      axios.get('/admin/downloadDod/' + id_file).then(res => {
+
+      });
+    }
   },
   components: {
     AppSwitch,
