@@ -144,7 +144,6 @@ export default {
       });
     },
     downloadSelfie(id_file) {
-      console.log(id_file);
       axios.post('/admin/downloadSelfie/' + id_file).then(res => {
 
       });

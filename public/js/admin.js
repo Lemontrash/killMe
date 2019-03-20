@@ -2010,7 +2010,6 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/admin/downloadId/' + id_file).then(function (res) {});
     },
     downloadSelfie: function downloadSelfie(id_file) {
-      console.log(id_file);
       axios.post('/admin/downloadSelfie/' + id_file).then(function (res) {});
     },
     downloadBank: function downloadBank(id_file) {
@@ -2040,7 +2039,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      data: []
+    };
+  },
+  methods: {
+    sync: function sync() {
+      var _this = this;
+
+      axios.get('/admin/usersWithPdf').then(function (res) {
+        // user , pdf
+        _this.data = res.data.pdf.map(function (n) {
+          n.user = res.data.users.find(function (z) {
+            return z.id == n.user_id;
+          });
+          return n;
+        });
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -3851,9 +3895,58 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("main", [
+    _c("div", { staticClass: "page-title" }, [_vm._v("ADMIN PANEL")]),
+    _vm._v(" "),
+    _c("table", { staticClass: "table" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        _vm._l(_vm.data, function(item) {
+          return _c("tr", { staticClass: "user" }, [
+            _c("td", [
+              _vm._v(
+                _vm._s(item.user.firstName) + " " + _vm._s(item.user.lastName)
+              )
+            ]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(item.user.created_at))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(item.user.mobile))]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td", { staticClass: "text-center" }, [_vm._v("Individual")])
+          ])
+        }),
+        0
+      )
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Registration Date")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Phone")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Download PDF")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Aproved")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Amount")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
