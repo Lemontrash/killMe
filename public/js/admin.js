@@ -2007,16 +2007,17 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     downloadPicture: function downloadPicture(id_file) {
-      axios.get('/admin/downloadId/' + id_file).then(function (res) {});
+      axios.post('/admin/downloadId/' + id_file).then(function (res) {});
     },
     downloadSelfie: function downloadSelfie(id_file) {
-      axios.get('/admin/downloadSelfie/' + id_file).then(function (res) {});
+      console.log(id_file);
+      axios.post('/admin/downloadSelfie/' + id_file).then(function (res) {});
     },
     downloadBank: function downloadBank(id_file) {
-      axios.get('/admin/downloadBank/' + id_file).then(function (res) {});
+      axios.post('/admin/downloadBank/' + id_file).then(function (res) {});
     },
     downloadDod: function downloadDod(id_file) {
-      axios.get('/admin/downloadDod/' + id_file).then(function (res) {});
+      axios.post('/admin/downloadDod/' + id_file).then(function (res) {});
     }
   },
   components: {
@@ -3678,11 +3679,21 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("button", { on: { click: _vm.downloadPicture } }, [
-              _c("i", { staticClass: "fa fa-copy" }),
-              _vm._v("\n          View Files\n          "),
-              _c("i", { staticClass: "fa fa-angle-right" })
-            ])
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.downloadPicture(_vm.user.approved.picture.id)
+                  }
+                }
+              },
+              [
+                _c("i", { staticClass: "fa fa-copy" }),
+                _vm._v("\n          View Files\n          "),
+                _c("i", { staticClass: "fa fa-angle-right" })
+              ]
+            )
           ],
           1
         ),
@@ -3710,11 +3721,21 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("button", { on: { click: _vm.downloadSelfie } }, [
-              _c("i", { staticClass: "fa fa-copy" }),
-              _vm._v("\n          View Files\n          "),
-              _c("i", { staticClass: "fa fa-angle-right" })
-            ])
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.downloadSelfie(_vm.user.approved.selfie.id)
+                  }
+                }
+              },
+              [
+                _c("i", { staticClass: "fa fa-copy" }),
+                _vm._v("\n          View Files\n          "),
+                _c("i", { staticClass: "fa fa-angle-right" })
+              ]
+            )
           ],
           1
         ),
@@ -3742,11 +3763,21 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("button", { on: { click: _vm.downloadBank } }, [
-              _c("i", { staticClass: "fa fa-copy" }),
-              _vm._v("\n          View Files\n          "),
-              _c("i", { staticClass: "fa fa-angle-right" })
-            ])
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.downloadBank(_vm.user.approved.bank.id)
+                  }
+                }
+              },
+              [
+                _c("i", { staticClass: "fa fa-copy" }),
+                _vm._v("\n          View Files\n          "),
+                _c("i", { staticClass: "fa fa-angle-right" })
+              ]
+            )
           ],
           1
         ),
@@ -3774,11 +3805,21 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("button", { on: { click: _vm.downloadDod } }, [
-              _c("i", { staticClass: "fa fa-copy" }),
-              _vm._v("\n          View Files\n          "),
-              _c("i", { staticClass: "fa fa-angle-right" })
-            ])
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.downloadDod(_vm.user.approved.dod.id)
+                  }
+                }
+              },
+              [
+                _c("i", { staticClass: "fa fa-copy" }),
+                _vm._v("\n          View Files\n          "),
+                _c("i", { staticClass: "fa fa-angle-right" })
+              ]
+            )
           ],
           1
         ),

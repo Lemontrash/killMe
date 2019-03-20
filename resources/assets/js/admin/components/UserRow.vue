@@ -10,7 +10,7 @@
             Files Status
           </div>
           <app-switch @input="updatePictureStatus" v-model="user.approved.picture.status"/>
-          <button @click="downloadPicture">
+          <button @click="downloadPicture(user.approved.picture.id)">
             <i class="fa fa-copy"></i>
             View Files
             <i class="fa fa-angle-right"></i>
@@ -24,7 +24,7 @@
             Files Status
           </div>
           <app-switch @input="updateSelfieStatus" v-model="user.approved.selfie.status"/>
-          <button @click="downloadSelfie">
+          <button @click="downloadSelfie(user.approved.selfie.id)">
             <i class="fa fa-copy"></i>
             View Files
             <i class="fa fa-angle-right"></i>
@@ -38,7 +38,7 @@
             Files Status
           </div>
           <app-switch @input="updateBankStatus" v-model="user.approved.bank.status"/>
-          <button @click="downloadBank">
+          <button @click="downloadBank(user.approved.bank.id)">
             <i class="fa fa-copy"></i>
             View Files
             <i class="fa fa-angle-right"></i>
@@ -52,7 +52,7 @@
             Files Status
           </div>
           <app-switch @input="updateDODStatus" v-model="user.approved.dod.status"/>
-          <button @click="downloadDod">
+          <button @click="downloadDod(user.approved.dod.id)">
             <i class="fa fa-copy"></i>
             View Files
             <i class="fa fa-angle-right"></i>
@@ -139,22 +139,23 @@ export default {
       }
     },
     downloadPicture(id_file) {
-      axios.get('/admin/downloadId/' + id_file).then(res => {
+      axios.post('/admin/downloadId/' + id_file).then(res => {
 
       });
     },
     downloadSelfie(id_file) {
-      axios.get('/admin/downloadSelfie/' + id_file).then(res => {
+      console.log(id_file);
+      axios.post('/admin/downloadSelfie/' + id_file).then(res => {
 
       });
     },
     downloadBank(id_file) {
-      axios.get('/admin/downloadBank/' + id_file).then(res => {
+      axios.post('/admin/downloadBank/' + id_file).then(res => {
 
       });
     },
     downloadDod(id_file) {
-      axios.get('/admin/downloadDod/' + id_file).then(res => {
+      axios.post('/admin/downloadDod/' + id_file).then(res => {
 
       });
     }
