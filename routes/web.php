@@ -7,6 +7,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/faq',          'HomeController@showFaq')                   ->name('faq');
     Route::get('/members',          'HomeController@showAcceptUser')                   ->name('members');
 
+    Route::post('/accept/{id}',          'UserController@approveUser');
+
     Route::get('/filesHistory', 'HomeController@showFilesHistory')          ->name('filesHistory');
     Route::get('/filesHistoryProcessed', 'HomeController@showFilesHistoryProcessed')          ->name('filesHistoryProcessed');
     Route::get('/filesHistoryPending', 'HomeController@showFilesHistoryPending')          ->name('filesHistoryPending');
@@ -63,13 +65,15 @@ Route::get('/admin/downloadSelfie/{id}', 'AdminController@downloadSelfie')->name
 Route::get('/admin/downloadBank/{id}',   'AdminController@downloadBank')->name('downloadBank');
 Route::get('/admin/downloadDod/{id}',    'AdminController@downloadDod')->name('downloadDod');
 
+Route::get('/admin/Messages',    'AdminController@showMessages')->name('messages');
+
 Route::post('/admin/approvePdf/{id}',     'AdminController@approvePdf')->name('approvePdf');
 Route::post('/admin/dismissPdf/{id}',     'AdminController@dismissPdf')->name('dismissPdf');
 Route::get('/admin/downloadPdf/{id}',    'AdminController@downloadPdf')->name('downloadPdf'); // Получать трансферы
 
 Route::get('/admin/files',      'AdminController@showAccountVerifictionFiles');
 Route::get('/admin/usersWithPdf',      'AdminController@showUsersWithPdf');
-Route::post('/admin/changeUserStatus',      'AdminController@changeUserStatus');
+Route::post('/admin/changeUserStatus/{id}',      'AdminController@changeUserStatus');
 
 // ?????????????????????????????????
 Route::get('/pdf', 'PdfController@show')->name('pdf');

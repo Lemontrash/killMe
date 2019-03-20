@@ -42,7 +42,8 @@
                         <td>{{$user->email}}</td>
                         {{--<td>{{$user->email}}</td>--}}
                         <td>
-                            <form action="#" method="post">
+                            <form action="/accept/{{$user->id}}" method="post">
+                                @csrf
                                 <input type="hidden" name="user" value="">
                                 <button class="theme-btn btn-gray" name="accept" value="no">No</button>
                                 <button class="theme-btn btn-red"  name="accept" value="yes">Yes</button>

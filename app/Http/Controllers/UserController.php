@@ -132,9 +132,25 @@ class UserController extends Controller
         return back();
     }
 
-    public function dismissUser($id){
+    public function rejectUser($id){
         User::find($id)->company = null;
         User::find($id)->save();
+        return back();
+    }
+    public function approveUser($id, Request $request){
+//        dd($request);
+        if ($request->get('accept') == 'no'){
+            $user =  User::find($id);
+            $user->company = null;
+            $user->save();
+//            dd($user);
+        }
+        else{
+            $user =  User::find($id);
+            $user->company = Auth::user()->company;
+            $user->save();
+        }
+
         return back();
     }
     public function downloadId($id){
