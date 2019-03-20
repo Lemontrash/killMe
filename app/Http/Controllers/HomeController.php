@@ -62,7 +62,7 @@ class HomeController extends Controller
             $files = $rule->get();
             $individuals = User::where('relation_id', Auth::id())->get();
             foreach ($individuals as $user){
-                $fileCollection = Files::where('user_id', Auth::id())->where('amount', '>', 0)->get();
+                $fileCollection = Files::where('user_id', $user->id)->where('amount', '>', 0)->get();
 
 //                dd($fileCollection);
                 foreach ($fileCollection as $item) {
@@ -93,7 +93,7 @@ class HomeController extends Controller
 //            dd($files);
             $individuals = User::where('relation_id', Auth::id())->get();
             foreach ($individuals as $user){
-                $fileCollection = Files::where('user_id', Auth::id())->where('approved', 'yes')->where('amount', '>', 0)->get();
+                $fileCollection = Files::where('user_id', $user->id)->where('approved', 'yes')->where('amount', '>', 0)->get();
                 foreach ($fileCollection as $item) {
                     $files[] = $item;
                 }
@@ -111,11 +111,13 @@ class HomeController extends Controller
             $files = $rule;
             $individuals = User::where('relation_id', Auth::id())->get();
             foreach ($individuals as $user){
-                $fileCollection = Files::where('user_id', Auth::id())->where('approved', '-')->where('amount', '>', 0)->get();
+                $fileCollection = Files::where('user_id', $user->id)->where('approved', '-')->where('amount', '>', 0)->get();
+//                dd($fileCollection);
 //                dd($fileCollection);
                 foreach ($fileCollection as $item) {
                     $files[] = $item;
                 }
+//                dd($files);
             }
         }
         return $files;
