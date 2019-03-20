@@ -58,14 +58,14 @@ Route::post('/admin/dismissBank/{id}',    'AdminController@dismissBank')->name('
 Route::post('/admin/dismissDod/{id}',     'AdminController@dismissDod')->name('dismissDod');
 
 // скачать файлы (view files)
-Route::post('/admin/downloadId/{id}',     'AdminController@downloadId')->name('downloadId');
-Route::post('/admin/downloadSelfie/{id}', 'AdminController@downloadSelfie')->name('downloadSelfie');
-Route::post('/admin/downloadBank/{id}',   'AdminController@downloadBank')->name('downloadBank');
-Route::post('/admin/downloadDod/{id}',    'AdminController@downloadDod')->name('downloadDod');
+Route::get('/admin/downloadId/{id}',     'AdminController@downloadId')->name('downloadId');
+Route::get('/admin/downloadSelfie/{id}', 'AdminController@downloadSelfie')->name('downloadSelfie');
+Route::get('/admin/downloadBank/{id}',   'AdminController@downloadBank')->name('downloadBank');
+Route::get('/admin/downloadDod/{id}',    'AdminController@downloadDod')->name('downloadDod');
 
 Route::post('/admin/approvePdf/{id}',     'AdminController@approvePdf')->name('approvePdf');
 Route::post('/admin/dismissPdf/{id}',     'AdminController@dismissPdf')->name('dismissPdf');
-Route::post('/admin/downloadPdf/{id}',    'AdminController@downloadPdf')->name('downloadPdf'); // Получать трансферы
+Route::get('/admin/downloadPdf/{id}',    'AdminController@downloadPdf')->name('downloadPdf'); // Получать трансферы
 
 Route::get('/admin/files',      'AdminController@showAccountVerifictionFiles');
 Route::get('/admin/usersWithPdf',      'AdminController@showUsersWithPdf');
