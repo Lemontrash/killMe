@@ -18,12 +18,14 @@
           <td>{{ item.user.firstName }} {{ item.user.lastName }}</td>
           <td>{{ item.user.created_at }}</td>
           <td>{{ item.user.mobile }}</td>
-          <td>
+          <td class="text-center">
             <a :href="'/admin/downloadPdf/' + item.id">
               <button class="theme-btn btn-blue">Download</button>
             </a>
           </td>
-          <td class="text-center">Individual</td>
+          <td class="text-center">
+            <app-switch @input="changeStatus($event, item.id)" v-model="item.approved"/>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -31,6 +33,8 @@
 </template>
 
 <script>
+import AppSwitch from './../components/Switch.vue'
+
 export default {
   data() {
     return {
@@ -43,16 +47,33 @@ export default {
         // user , pdf
         this.data = res.data.files.map(n => {
           n.user = res.data.users.find(z => z.id == n.user_id);
+          n.approved = n.approved == 'yes' ? true : false;
           return n;
         });
       });
+    },
+    changeStatus(status, id) {
+      if(status) {
+        axios.post('/admin/approvePdf/' + id);
+      } else {
+        axios.post('/admin/dismissPdf/' + id);
+      }
+
     }
   },
   created() {
     this.sync();
+  },
+  components: {
+    AppSwitch,
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
+.switch {
+  margin: 0 auto;
+}
+
 </style>
