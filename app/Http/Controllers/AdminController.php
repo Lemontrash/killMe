@@ -157,7 +157,7 @@ class AdminController extends Controller
 
     public function showMessages(){
         $messages = Messages::all();
-        return view('admin.messages', ['messages' => $messages]);
+        return response()->json($messages);
     }
 
     public function showAccountVerifictionFiles(){

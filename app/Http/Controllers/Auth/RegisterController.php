@@ -98,7 +98,7 @@ class RegisterController extends Controller
             ]);
 
         }
-
+        //7055555
         $file = Files::create([
             'user_id'            => $user->id,
 //            'firstName'         => Auth::user()->firstName,

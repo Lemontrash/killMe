@@ -45,8 +45,13 @@ class HomeController extends Controller
         return view('uploadFiles');
     }
     public function showDeposit(){
-        $file = Files::where('user_id', Auth::id())->first();
-        return view('profileExchange', ['file' => $file]);
+//        $file =
+//        dd($file);
+        if (Files::where('user_id', Auth::id())->first()){
+            $file = Files::where('user_id', Auth::id())->first();
+            return view('profileExchange', ['file' => $file]);
+        }
+        return view('profileExchangeEmpty');
     }
     public function showPersonalDataVerify(){
         $users = User::where('role', 'business')->get();
@@ -133,7 +138,7 @@ class HomeController extends Controller
         return view('profileContactUs');
     }
     public function showAcceptUser(){
-        $users = User::where('company', Auth::user()->company)->get();
+        $users = User::where('company', Auth::user()->company)->where('role', 'individual')->get();
         return view('acceptUser', ['users' => $users]);
     }
 
